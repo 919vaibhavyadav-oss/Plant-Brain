@@ -1,0 +1,16 @@
+tag,name,equipment_type,area,criticality,oem,installed
+P-101,Cooling Water Pump A,Centrifugal Pump,Power Plant,High,KSB Pumps,2014-03-12
+P-102,Cooling Water Pump B,Centrifugal Pump,Power Plant,High,KSB Pumps,2014-03-12
+P-201,Boiler Feed Pump,Multistage Pump,Power Plant,Critical,Flowserve,2015-08-20
+C-201,Coke Oven Gas Compressor,Screw Compressor,Coke Oven,Critical,Kirloskar,2013-11-05
+C-202,Instrument Air Compressor,Reciprocating Compressor,Utilities,Medium,Atlas Copco,2018-02-14
+B-301,Boiler No. 3,Water Tube Boiler,Power Plant,Critical,BHEL,2012-06-30
+COB-1,Coke Oven Battery 1,Coke Oven Battery,Coke Oven,Critical,SAIL Engg,2010-01-15
+CV-401,Coal Conveyor 401,Belt Conveyor,Material Handling,High,TRF Ltd,2016-09-01
+CV-402,Coke Conveyor 402,Belt Conveyor,Material Handling,Medium,TRF Ltd,2016-09-01
+TR-501,Main Power Transformer,Oil-Filled Transformer,Switchyard,Critical,CGL,2011-04-22
+TR-502,Auxiliary Transformer,Oil-Filled Transformer,Switchyard,High,CGL,2013-07-18
+V-601,Ammonia Storage Vessel,Pressure Vessel,By-Product Plant,Critical,L&T,2012-12-01
+F-701,ESP Fan,Induced Draft Fan,Power Plant,High,Howden,2015-05-09
+GD-801,CO Gas Detector Array - Battery Top,Gas Detection System,Coke Oven,Critical,Honeywell,2019-10-11
+EOT-901,EOT Crane 20T,Overhead Crane,Material Handling,High,Anupam,2014-10-27

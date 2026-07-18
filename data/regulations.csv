@@ -1,0 +1,10 @@
+clause_id,requirement,applies_to_types,frequency_days,evidence_inspection_type
+OISD-STD-105,"Work permit system for hot work, confined space entry and simultaneous operations in coke oven and gas handling areas.",Coke Oven Battery|Gas Detection System,90,Gas leakage survey and permit audit
+OISD-STD-163,Safety of control room and portable/fixed gas detection systems: calibration every 90 days with certified span gas.,Gas Detection System,90,Gas detector calibration
+IBR-1950-Reg-391,Indian Boiler Regulations: annual statutory inspection and hydraulic test of boilers by competent authority.,Water Tube Boiler,365,Statutory boiler inspection
+FactoriesAct-S.28,Factories Act 1948 Section 28: hoists and lifts to be thoroughly examined every 6 months.,Overhead Crane,180,Hoist thorough examination
+FactoriesAct-S.29,Factories Act 1948 Section 29: lifting machines — annual thorough examination and load test by competent person.,Overhead Crane,365,Statutory crane load test
+FactoriesAct-S.21,Factories Act 1948 Section 21: secure fencing of machinery — every dangerous part of machinery must be securely fenced; interlocked guards must not be defeated.,Belt Conveyor,180,Conveyor guard & interlock audit
+PESO-SMPV-Rule-19,"SMPV (Unfired) Rules: periodic testing of pressure vessels storing compressed/liquefiable gas — annual external, 5-yearly hydro.",Pressure Vessel,365,Pressure vessel thickness survey
+CEA-Reg-2010-R.30,CEA (Measures relating to Safety and Electric Supply) Regulations: periodic condition monitoring of power transformers including DGA every 6 months for critical units.,Oil-Filled Transformer,180,Dissolved gas analysis
+OISD-RP-124,Predictive maintenance of rotating equipment: vibration monitoring of critical compressors and pumps at 90-day intervals.,Screw Compressor|Centrifugal Pump|Multistage Pump|Induced Draft Fan,90,Vibration signature analysis

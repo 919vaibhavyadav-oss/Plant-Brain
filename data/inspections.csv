@@ -1,0 +1,38 @@
+inspection_id,equipment_tag,date,inspection_type,finding,severity,inspector
+INSP-5001,B-301,2023-09-20,Statutory boiler inspection (IBR),Deviation recorded; corrective work order raised.,OK,K. Nair
+INSP-5004,V-601,2023-11-08,Pressure vessel thickness survey (PESO/SMPV),Satisfactory. Next due as per plan.,OK,K. Nair
+INSP-5016,EOT-901,2024-01-25,Statutory crane load test (Factories Act S.29),No abnormality observed.,Minor,M. Reddy
+INSP-5007,TR-501,2024-09-10,Dissolved gas analysis + oil BDV test,Deviation recorded; corrective work order raised.,OK,P. Singh
+INSP-5002,B-301,2024-09-19,Statutory boiler inspection (IBR),Satisfactory. Next due as per plan.,OK,V. Patil
+INSP-5005,V-601,2024-11-09,Pressure vessel thickness survey (PESO/SMPV),"Minor deviation noted, within acceptance limits.",OK,D. Bose
+INSP-5022,CV-402,2024-12-10,Conveyor guard & interlock audit,"Minor deviation noted, within acceptance limits.",OK,P. Singh
+INSP-5017,EOT-901,2025-01-27,Statutory crane load test (Factories Act S.29),Satisfactory. Next due as per plan.,Minor,S. Iyer
+INSP-5008,TR-501,2025-03-07,Dissolved gas analysis + oil BDV test,No abnormality observed.,OK,R. Sharma
+INSP-5010,TR-502,2025-04-20,Dissolved gas analysis + oil BDV test,No abnormality observed.,OK,A. Khan
+INSP-5019,CV-401,2025-05-18,Conveyor guard & interlock audit,Satisfactory. Next due as per plan.,OK,D. Bose
+INSP-5023,CV-402,2025-06-13,Conveyor guard & interlock audit,"Minor deviation noted, within acceptance limits.",OK,D. Bose
+INSP-5013,GD-801,2025-08-08,Gas detector calibration (OISD-STD-163),Satisfactory. Next due as per plan.,OK,A. Khan
+INSP-5009,TR-501,2025-08-30,Dissolved gas analysis + oil BDV test,"Minor deviation noted, within acceptance limits.",OK,M. Reddy
+INSP-5003,B-301,2025-09-14,Statutory boiler inspection (IBR),Deviation recorded; corrective work order raised.,Minor,D. Bose
+INSP-5034,F-701,2025-09-30,Vibration signature analysis,Satisfactory. Next due as per plan.,OK,S. Iyer
+INSP-5011,TR-502,2025-10-07,Dissolved gas analysis + oil BDV test,Satisfactory. Next due as per plan.,OK,V. Patil
+INSP-5006,V-601,2025-11-02,Pressure vessel thickness survey (PESO/SMPV),Satisfactory. Next due as per plan.,OK,R. Sharma
+INSP-5014,GD-801,2025-11-04,Gas detector calibration (OISD-STD-163),"Minor deviation noted, within acceptance limits.",OK,K. Nair
+INSP-5020,CV-401,2025-11-21,Conveyor guard & interlock audit,"Minor deviation noted, within acceptance limits.",OK,K. Nair
+INSP-5028,P-201,2025-11-24,Vibration signature analysis,Satisfactory. Next due as per plan.,Minor,R. Sharma
+INSP-5024,CV-402,2025-12-10,Conveyor guard & interlock audit,Satisfactory. Next due as per plan.,OK,V. Patil
+INSP-5031,C-201,2025-12-14,Vibration signature analysis,"Minor deviation noted, within acceptance limits.",OK,M. Reddy
+INSP-5025,COB-1,2025-12-20,Battery door seal & gas leakage survey (OISD-STD-105),Satisfactory. Next due as per plan.,OK,S. Iyer
+INSP-5035,F-701,2026-01-01,Vibration signature analysis,"Minor deviation noted, within acceptance limits.",OK,V. Patil
+INSP-5018,EOT-901,2026-01-25,Statutory crane load test (Factories Act S.29),Satisfactory. Next due as per plan.,OK,D. Bose
+INSP-5015,GD-801,2026-02-08,Gas detector calibration (OISD-STD-163),"Minor deviation noted, within acceptance limits.",OK,V. Patil
+INSP-5029,P-201,2026-03-01,Vibration signature analysis,"Minor deviation noted, within acceptance limits.",OK,M. Reddy
+INSP-5026,COB-1,2026-03-24,Battery door seal & gas leakage survey (OISD-STD-105),Satisfactory. Next due as per plan.,OK,M. Reddy
+INSP-5032,C-201,2026-03-24,Vibration signature analysis,No abnormality observed.,OK,D. Bose
+INSP-5036,F-701,2026-04-02,Vibration signature analysis,"Minor deviation noted, within acceptance limits.",OK,P. Singh
+INSP-5012,TR-502,2026-04-12,Dissolved gas analysis + oil BDV test,Satisfactory. Next due as per plan.,OK,M. Reddy
+INSP-5021,CV-401,2026-05-20,Conveyor guard & interlock audit,Satisfactory. Next due as per plan.,OK,R. Sharma
+INSP-5037,CV-401,2026-05-20,Conveyor guard & interlock audit,"Guard interlock on tail pulley found bridged with jumper wire. Jumper removed, interlock function restored. Recommend awareness session — this is the second such observation this year (see near-miss NM-2026-011).",Major,S. Iyer
+INSP-5030,P-201,2026-05-30,Vibration signature analysis,No abnormality observed.,OK,K. Nair
+INSP-5033,C-201,2026-06-15,Vibration signature analysis,Deviation recorded; corrective work order raised.,OK,D. Bose
+INSP-5027,COB-1,2026-06-28,Battery door seal & gas leakage survey (OISD-STD-105),Satisfactory. Next due as per plan.,Minor,V. Patil

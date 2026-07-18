@@ -1,0 +1,10 @@
+.env
+__pycache__/
+external/
+data/oisd/*.pdf
+data/oisd/_extracted.json
+deck/node_modules/
+deck/package.json
+deck/package-lock.json
+deck/qa/
+docs/qa/
