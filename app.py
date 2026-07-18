@@ -31,11 +31,87 @@ from src.retrieval import Index
 st.set_page_config(page_title="PlantBrain — Unified Asset & Operations Brain",
                    page_icon="🏭", layout="wide")
 
-# dataviz reference palette (light mode)
-INK = "#0b0b0b"; INK2 = "#52514e"; MUTED = "#898781"; GRID = "#e1e0d9"; AXIS = "#c3c2b7"
-S1 = "#2a78d6"; S2 = "#1baf7a"; S3 = "#eda100"; S4 = "#008300"; S5 = "#4a3aa7"; S6 = "#e34948"
-STATUS = {"MISSING": "#d03b3b", "OVERDUE": "#ec835a", "DUE SOON": "#fab219", "OK": "#0ca30c"}
+# dark-mode dataviz palette on the PlantBrain brand surface (gunmetal + amber)
+INK = "#E8ECF1"; INK2 = "#C9D4DE"; MUTED = "#8FA0B0"; GRID = "#2C3540"; AXIS = "#3D4854"
+SURFACE = "#151A20"; CARD = "#212934"; BORDER = "#2E3947"; AMBER = "#F0A028"
+S1 = "#3987E5"; S2 = "#199E70"; S3 = "#C98500"; S4 = "#008300"; S5 = "#9085E9"; S6 = "#E66767"
+STATUS = {"MISSING": "#D03B3B", "OVERDUE": "#EC835A", "DUE SOON": "#FAB219", "OK": "#0CA30C"}
 FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif'
+
+CSS = f"""
+<style>
+/* ---- chrome ---- */
+#MainMenu, footer {{visibility: hidden;}}
+.block-container {{padding-top: 1.2rem; max-width: 1250px;}}
+
+/* ---- hero ---- */
+.pb-hero {{
+  background: linear-gradient(135deg, #1B222B 0%, #232E3B 55%, #26313F 100%);
+  border: 1px solid {BORDER}; border-radius: 16px;
+  padding: 26px 32px 22px 32px; margin-bottom: 14px;
+}}
+.pb-kicker {{
+  color: {AMBER}; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em; margin-bottom: 6px;
+}}
+.pb-title {{
+  color: #FFFFFF; font-size: 2.1rem; font-weight: 800;
+  line-height: 1.15; margin: 0 0 4px 0;
+}}
+.pb-sub {{color: {MUTED}; font-size: 0.95rem; margin-bottom: 14px;}}
+.pb-chips span {{
+  display: inline-block; background: rgba(240,160,40,0.12); color: {AMBER};
+  border: 1px solid rgba(240,160,40,0.35); border-radius: 999px;
+  padding: 3px 12px; margin-right: 8px; font-size: 0.78rem; font-weight: 600;
+}}
+
+/* ---- nav radio as segmented pills ---- */
+div[role="radiogroup"] {{gap: 8px; flex-wrap: wrap;}}
+div[role="radiogroup"] label {{
+  background: {CARD}; border: 1px solid {BORDER}; border-radius: 999px;
+  padding: 7px 16px; transition: border-color .15s;
+}}
+div[role="radiogroup"] label:hover {{border-color: {AMBER};}}
+div[role="radiogroup"] label:has(input:checked) {{
+  background: rgba(240,160,40,0.15); border-color: {AMBER};
+}}
+div[role="radiogroup"] label > div:first-child {{display: none;}}
+div[role="radiogroup"] p {{font-size: 0.88rem; font-weight: 600;}}
+
+/* ---- metric cards ---- */
+[data-testid="stMetric"] {{
+  background: {CARD}; border: 1px solid {BORDER}; border-radius: 14px;
+  padding: 16px 18px 12px 18px;
+}}
+[data-testid="stMetricValue"] {{color: {AMBER}; font-weight: 700;}}
+[data-testid="stMetricLabel"] p {{color: {MUTED}; font-size: 0.8rem;}}
+
+/* ---- buttons ---- */
+.stButton button {{
+  background: {CARD}; border: 1px solid {BORDER}; color: {INK2};
+  border-radius: 10px; font-size: 0.82rem;
+}}
+.stButton button:hover {{border-color: {AMBER}; color: {AMBER};}}
+
+/* ---- echo cards ---- */
+.pb-echo {{
+  background: {CARD}; border: 1px solid {BORDER}; border-radius: 14px;
+  padding: 16px 20px; margin-bottom: 12px;
+}}
+.pb-badge {{
+  display: inline-block; border-radius: 6px; padding: 2px 10px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; color: #151A20;
+}}
+.pb-echo h4 {{color: {INK}; margin: 8px 0 6px 0; font-size: 1.02rem;}}
+.pb-echo p {{color: {INK2}; font-size: 0.9rem; margin: 0 0 6px 0;}}
+.pb-echo .ev {{color: {MUTED}; font-size: 0.78rem;}}
+
+/* ---- expanders / containers ---- */
+[data-testid="stExpander"] {{
+  background: {CARD}; border: 1px solid {BORDER}; border-radius: 12px;
+}}
+</style>
+"""
 
 
 def style(fig, h=380):
@@ -65,9 +141,23 @@ chunks, tables, graph, index, copilot, gaps, echoes = boot()
 wo = tables["work_orders"].copy()
 wo["date"] = pd.to_datetime(wo["date"])
 
-st.title("🏭 PlantBrain — Unified Asset & Operations Brain")
-st.caption("Bharat Ispat & Energy Ltd · Unit 2 (fictional demo plant) — one intelligence layer "
-           "over CMMS, inspection registers, incident reports, SOPs and the regulatory library.")
+st.markdown(CSS, unsafe_allow_html=True)
+n_real_hdr = sum(1 for c in chunks if c.doc_type in ("field_wo", "standard"))
+st.markdown(f"""
+<div class="pb-hero">
+  <div class="pb-kicker">ET AI HACKATHON 2026 · PROBLEM STATEMENT 8</div>
+  <div class="pb-title">🏭 PlantBrain — Unified Asset &amp; Operations Brain</div>
+  <div class="pb-sub">Bharat Ispat &amp; Energy Ltd · Unit 2 (fictional demo plant) — one
+  intelligence layer over CMMS, inspection registers, incident reports, SOPs and the
+  regulatory library.</div>
+  <div class="pb-chips">
+    <span>{len(chunks):,} records unified</span>
+    <span>{n_real_hdr:,} real-world documents</span>
+    <span>94.8% benchmarked extraction</span>
+    <span>Answers with citations</span>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 PAGES = ["Overview", f"🚨 Risk Echoes ({len(echoes)})", "💬 Expert Copilot",
          "🕸️ Knowledge Graph", "🔧 Maintenance Intelligence", "⚖️ Compliance Radar",
@@ -92,7 +182,7 @@ if nav == PAGES[0]:
         dt = (corr.groupby("equipment_tag")["downtime_hours"].sum()
               .sort_values(ascending=True).tail(10))
         fig = go.Figure(go.Bar(
-            x=dt.values, y=dt.index, orientation="h", marker_color=S1,
+            x=dt.values, y=dt.index, orientation="h", marker_color=AMBER,
             marker=dict(cornerradius=4),
             hovertemplate="%{y}: %{x:.0f} h downtime<extra></extra>"))
         fig.update_layout(title=dict(text="Corrective downtime by asset (hours, 24 months)",
@@ -124,12 +214,17 @@ elif nav == PAGES[1]:
                "(an overdue statutory check or a repeat-failure pattern) on the same asset.")
     if not echoes:
         st.success("No active risk echoes.")
+    import re as _re
     for e in echoes:
-        icon = "🟥" if e["severity"] == "HIGH" else "🟧"
-        with st.container(border=True):
-            st.markdown(f"{icon} **{e['severity']}** — {e['headline']}")
-            st.markdown(e["detail"])
-            st.caption("Evidence: " + " · ".join(e["evidence"]))
+        badge_color = "#EC835A" if e["severity"] == "HIGH" else "#FAB219"
+        detail = _re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", e["detail"])
+        st.markdown(f"""
+<div class="pb-echo">
+  <span class="pb-badge" style="background:{badge_color}">{e['severity']}</span>
+  <h4>{e['headline']}</h4>
+  <p>{detail}</p>
+  <div class="ev">Evidence: {' · '.join(e['evidence'])}</div>
+</div>""", unsafe_allow_html=True)
 
 # ------------------------------------------------------------------ copilot
 elif nav == PAGES[2]:
@@ -191,7 +286,7 @@ elif nav == PAGES[3]:
             text=[n for n in nodes], textposition="top center",
             textfont=dict(size=9, color=INK2),
             marker=dict(size=14 if kind == "equipment" else 10, color=color,
-                        line=dict(color="#fcfcfb", width=2)),
+                        line=dict(color=SURFACE, width=2)),
             hovertemplate="%{text}<extra>" + KIND_LABEL[kind] + "</extra>"))
     fig.update_xaxes(visible=False); fig.update_yaxes(visible=False)
     st.plotly_chart(style(fig, h=560), use_container_width=True)
@@ -222,7 +317,7 @@ elif nav == PAGES[4]:
             sub = tl[tl["mode"] == mode]
             fig.add_trace(go.Scatter(
                 x=sub["date"], y=sub["downtime_hours"], mode="markers", name=mode,
-                marker=dict(size=11, color=color, line=dict(color="#fcfcfb", width=2)),
+                marker=dict(size=11, color=color, line=dict(color=SURFACE, width=2)),
                 hovertemplate="%{x|%d %b %Y} · %{y:.1f} h<br>%{customdata}<extra>" + mode + "</extra>",
                 customdata=[d[:90] + "…" for d in sub["description"]]))
         fig.update_layout(title=dict(text="Corrective events — downtime hours by failure mode",
@@ -291,7 +386,7 @@ elif nav == PAGES[6]:
             objs = pd.DataFrame(bench["top_failed_objects"], columns=["object", "mentions"])
             objs = objs.sort_values("mentions").tail(10)
             fig = go.Figure(go.Bar(
-                x=objs["mentions"], y=objs["object"], orientation="h", marker_color=S1,
+                x=objs["mentions"], y=objs["object"], orientation="h", marker_color=AMBER,
                 marker=dict(cornerradius=4),
                 hovertemplate="%{y}: %{x} mentions<extra></extra>"))
             fig.update_layout(title=dict(
