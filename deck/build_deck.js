@@ -64,11 +64,14 @@ function chip(s, x, y, label, fill) {
     "One intelligence layer over every plant document — validated on 8,076 real work orders and official Indian standards",
     { x: 1.8, y: 4.35, w: W - 3.6, h: 0.7, fontFace: F, fontSize: 15, color: "8FA0B0",
       align: "center", margin: 0 });
-  s.addShape("roundRect", { x: 4.87, y: 5.5, w: 3.6, h: 0.62, rectRadius: 0.31,
+  s.addShape("roundRect", { x: 4.87, y: 5.35, w: 3.6, h: 0.62, rectRadius: 0.31,
     fill: { color: CARD_DARK }, line: { color: AMBER, width: 1 } });
   s.addText("Live working prototype inside", {
-    x: 4.87, y: 5.5, w: 3.6, h: 0.62, fontFace: F, fontSize: 13.5, bold: true,
+    x: 4.87, y: 5.35, w: 3.6, h: 0.62, fontFace: F, fontSize: 13.5, bold: true,
     color: AMBER, align: "center", valign: "middle", margin: 0 });
+  s.addText("Team Aero Flash  —  Vaibhav  ·  Subham Kumar", {
+    x: 0, y: 6.35, w: W, h: 0.4, fontFace: F, fontSize: 14, bold: true,
+    color: "C9D4DE", align: "center", margin: 0 });
   s.addNotes("Open with the hook: Indian heavy industry doesn't have a data problem — it has a memory problem. We built the layer that ends it, and we validated it on real industrial data.");
 }
 
@@ -351,8 +354,11 @@ function chip(s, x, y, label, fill) {
   s.addText("PlantBrain makes it impossible to lose.", {
     x: 1.3, y: 3.75, w: W - 2.6, h: 0.7, fontFace: F, fontSize: 22, color: AMBER,
     align: "center", margin: 0 });
+  s.addText("Team Aero Flash  —  Vaibhav  ·  Subham Kumar", {
+    x: 0, y: 5.35, w: W, h: 0.4, fontFace: F, fontSize: 15, bold: true, color: "C9D4DE",
+    align: "center", margin: 0 });
   s.addText("PlantBrain  ·  live demo available  ·  built for ET AI Hackathon 2026", {
-    x: 0, y: 5.6, w: W, h: 0.4, fontFace: F, fontSize: 13, color: "8FA0B0",
+    x: 0, y: 5.85, w: W, h: 0.4, fontFace: F, fontSize: 12.5, color: "8FA0B0",
     align: "center", margin: 0 });
   s.addNotes("Close on the quote, invite questions, offer the live demo again.");
 }
