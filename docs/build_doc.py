@@ -24,7 +24,7 @@ AMBER = colors.HexColor("#B87407")   # darker amber for print contrast
 PALE = colors.HexColor("#F2F4F6")
 AMBER_TINT = colors.HexColor("#FDF3E0")
 
-TEAM = "Team Aero Flash — Vaibhav · Subham Kumar"
+TEAM = "Team justvaibhavyadav — Vaibhav · Subham Kumar"
 
 S = {
     "h1": ParagraphStyle("h1", fontName="Helvetica-Bold", fontSize=20, leading=25,
